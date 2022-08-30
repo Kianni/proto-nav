@@ -10,11 +10,14 @@ import { LogoutDialog } from 'src/logoutDialog.component';
 })
 export class AppComponent {
   title = 'nav_proto';
-  showFiller: boolean = true;
-  opened: boolean = false;
-  screenWidth: number = 0;
+  showFiller: boolean;
+  opened: boolean;
+  screenWidth: number;
 
   constructor(private dialog: MatDialog) {
+    this.showFiller = true;
+    this.opened = false;
+    this.screenWidth = 0;
     this.onResize();
   }
 
@@ -27,6 +30,16 @@ export class AppComponent {
       this.showFiller = false
       this.opened = true;
     }
+  }
+
+  // hovering extends navbar only on desktop screen
+  hoverOnDesktop(showNavBar: boolean) {
+    if (this.screenWidth > 599) {
+      this.showFiller = showNavBar;
+    } else {
+      this.showFiller = true;
+    }
+
   }
 
   onLogin() {

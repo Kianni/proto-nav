@@ -1,5 +1,6 @@
 <mat-sidenav-container class="example-container">
-  <mat-sidenav #sidenav class="example-sidenav" mode="side" [(opened)]="opened">
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" [(opened)]="opened" (mouseenter)="hoverOnDesktop(true)"
+    (mouseleave)="hoverOnDesktop(false)">
 
     <!-- logo and button only on greater than sm screens -->
     <div class="d-none d-sm-block">
@@ -16,11 +17,11 @@
 
 
     <div class="d-sm-none d-flex position-relative justify-content-between">
-      <!-- close button when sidenav is open -->
+      <!-- one of two functionally identical login/logout buttons -->
       <button mat-fab color="basic" class="d-sm-none mt-4 ms-4" (click)="onLogin()">
         NN
       </button>
-      <!-- one of two functionally identical login/logout buttons -->
+      <!-- close button when sidenav is open -->
       <button class="btn text-light align-self-baseline p-1" (click)="sidenav.toggle()">
         <mat-icon>close</mat-icon>
       </button>
@@ -46,7 +47,7 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <!-- hamburger button to open sidenav on sm screen -->
+    <!-- hamburger button to open sidenav on mobile phone screen -->
     <div *ngIf="!opened" class="d-sm-none">
       <button class="btn bg-light text-dark badge rounded-circle" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
