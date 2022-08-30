@@ -1,0 +1,48 @@
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav class="example-sidenav" mode="side" [(opened)]="opened">
+
+    <!-- logo and button only on greater than sm screens -->
+    <div class="d-none d-sm-block">
+      <img class="d-inline-block ms-3 mt-3 mb-3" src="../assets/VM-2022-07 heart pin white.png" alt="logo">
+
+      <div class="position-absolute border-top border-mute border-2 overF">
+        <button (click)="showFiller = !showFiller"
+          class="position-absolute top-100 start-100 translate-middle badge rounded-circle text-dark bg-light btn-sm border border-mute">
+          <mat-icon *ngIf="!showFiller">chevron_right</mat-icon>
+          <mat-icon *ngIf="showFiller">chevron_left</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- close button when sidenav is open -->
+    <div *ngIf="opened" class="d-sm-none d-flex justify-content-end">
+      <button class="btn text-light badge rounded-circle" (click)="sidenav.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+
+    <!-- navigation sidenav expanded/shrinked with chevron button -->
+    <mat-nav-list class="mt-4">
+      <a mat-list-item class="text-light">
+        <mat-icon>home</mat-icon>
+        <span class="nav-caption ps-2" *ngIf="showFiller">Home</span>
+      </a>
+      <a mat-list-item class="text-light">
+        <mat-icon>devices</mat-icon>
+        <span class="nav-caption ps-2" *ngIf="showFiller">Devices</span>
+      </a>
+      <a mat-list-item class="text-light">
+        <mat-icon>person</mat-icon>
+        <span class="nav-caption ps-2" *ngIf="showFiller">User</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- hamburger button to open sidenav on sm screen -->
+  <div *ngIf="!opened" class="d-sm-none">
+    <button class="btn bg-light text-dark badge rounded-circle" (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+</mat-sidenav-container>
