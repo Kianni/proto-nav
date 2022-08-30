@@ -3,7 +3,7 @@
 
     <!-- logo and button only on greater than sm screens -->
     <div class="d-none d-sm-block">
-      <img class="d-inline-block ms-3 mt-3 mb-3" src="../assets/VM-2022-07 heart pin white.png" alt="logo">
+      <img class="d-inline-block ms-1 mt-3 mb-3" src="../assets/VM-2022-07 heart pin white.png" alt="logo">
 
       <div class="position-absolute border-top border-mute border-2 overF">
         <button (click)="showFiller = !showFiller"
@@ -14,12 +14,19 @@
       </div>
     </div>
 
-    <!-- close button when sidenav is open -->
-    <div *ngIf="opened" class="d-sm-none d-flex justify-content-end">
-      <button class="btn text-light badge rounded-circle" (click)="sidenav.toggle()">
+
+    <div class="d-sm-none d-flex position-relative justify-content-between">
+      <!-- close button when sidenav is open -->
+      <button mat-fab color="basic" class="d-sm-none mt-4 ms-4" (click)="onLogin()">
+        NN
+      </button>
+      <!-- one of two functionally identical login/logout buttons -->
+      <button class="btn text-light align-self-baseline p-1" (click)="sidenav.toggle()">
         <mat-icon>close</mat-icon>
       </button>
     </div>
+
+
 
     <!-- navigation sidenav expanded/shrinked with chevron button -->
     <mat-nav-list class="mt-4">
@@ -38,11 +45,18 @@
     </mat-nav-list>
   </mat-sidenav>
 
-  <!-- hamburger button to open sidenav on sm screen -->
-  <div *ngIf="!opened" class="d-sm-none">
-    <button class="btn bg-light text-dark badge rounded-circle" (click)="sidenav.toggle()">
-      <mat-icon>menu</mat-icon>
+  <mat-sidenav-content>
+    <!-- hamburger button to open sidenav on sm screen -->
+    <div *ngIf="!opened" class="d-sm-none">
+      <button class="btn bg-light text-dark badge rounded-circle" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <!-- one of two functionally identical login/logout buttons -->
+    <button mat-fab color="basic" class="d-none d-sm-block ms-auto my-3 me-3" (click)="onLogin()">
+      NN
     </button>
-  </div>
+  </mat-sidenav-content>
 
 </mat-sidenav-container>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HostListener } from "@angular/core";
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { LogoutDialog } from 'src/logoutDialog.component';
 
 @Component({
   selector: 'app-root',
@@ -8,14 +10,15 @@ import { HostListener } from "@angular/core";
 })
 export class AppComponent {
   title = 'nav_proto';
-  showFiller = true;
+  showFiller: boolean = true;
   opened: boolean = false;
   screenWidth: number = 0;
 
-  constructor() {
+  constructor(private dialog: MatDialog) {
     this.onResize();
   }
 
+  // different layout depending on desktop/mobile screen size
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
@@ -24,5 +27,9 @@ export class AppComponent {
       this.showFiller = false
       this.opened = true;
     }
+  }
+
+  onLogin() {
+    this.dialog.open(LogoutDialog);
   }
 }

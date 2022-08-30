@@ -7,10 +7,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LogoutDialog } from 'src/logoutDialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogoutDialog
   ],
   imports: [
     BrowserModule,
@@ -18,9 +21,11 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [LogoutDialog]
 })
 export class AppModule { }
