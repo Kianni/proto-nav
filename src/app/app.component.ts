@@ -25,7 +25,6 @@ export class AppComponent {
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.screenWidth = window.innerWidth;
-    console.log(this.screenWidth);
     if (this.screenWidth > 599) {
       this.showFiller = false
       this.opened = true;
