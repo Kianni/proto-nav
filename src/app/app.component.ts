@@ -13,6 +13,7 @@ export class AppComponent {
   showFiller: boolean;
   opened: boolean;
   screenWidth: number;
+  longText: string = "Злюкен собакен";
 
   constructor(private dialog: MatDialog) {
     this.showFiller = true;

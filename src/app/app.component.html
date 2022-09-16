@@ -31,9 +31,10 @@
 
     <!-- navigation sidenav expanded/shrinked with chevron button -->
     <mat-nav-list class="mt-4">
-      <a mat-list-item class="text-light">
+      <a mat-list-item class="text-light active">
         <mat-icon>home</mat-icon>
         <span class="nav-caption ps-2" *ngIf="showFiller">Home</span>
+        <!-- <i class="fa-duotone fa-house"></i> -->
       </a>
       <a mat-list-item class="text-light">
         <mat-icon>devices</mat-icon>
@@ -53,6 +54,45 @@
         <mat-icon>menu</mat-icon>
       </button>
     </div>
+
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+
+    <mat-card class="example-card">
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+      <mat-card-content>
+        <p>This card indeterminates progress bar.</p>
+        <p>{{longText}}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
 
     <!-- one of two functionally identical login/logout buttons -->
     <button mat-fab color="basic" class="d-none d-sm-block ms-auto my-3 me-3" (click)="onLogin()">

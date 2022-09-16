@@ -19,3 +19,17 @@
 img {
     width: 3rem;
 }
+
+a:hover {
+    background-color: #25335F !important;
+}
+
+.active {
+    border-color: #FFFFFF;
+}
+
+a {
+    border-left-width: 3px;
+    border-left-style: solid;
+    border-color: transparent;
+}
